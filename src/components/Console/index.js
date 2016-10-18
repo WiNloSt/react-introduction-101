@@ -3,9 +3,7 @@ import style from './style.scss'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
 
 const Console = () => (
-  <div className={style.container}>
-    <textarea className={style.editor}>some code here</textarea>
-  </div>
+  <div className={style.console}>I'm a console</div>
 )
 
 export default AcceptStyleAndClassName(Console)
