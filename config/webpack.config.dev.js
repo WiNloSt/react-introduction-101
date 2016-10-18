@@ -109,6 +109,7 @@ module.exports = {
           })
         }
       },
+      // load global css module as is, e.g. normalize.css
       {
         test: /\.css$/,
         loader: 'style!css',
