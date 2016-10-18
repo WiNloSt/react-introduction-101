@@ -4,7 +4,9 @@ import Editor from './components/Editor/index.js'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{
+        height: '100%'
+      }}>
         <Editor />
       </div>
     )
