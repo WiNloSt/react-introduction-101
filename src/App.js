@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import Editor from './components/Editor/index.js'
+import style from './style.scss'
 
 class App extends Component {
   render() {
     return (
-      <div style={{
-        height: '100%'
-      }}>
+      <div className={style.container}>
         <Editor />
       </div>
     )
