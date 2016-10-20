@@ -3,20 +3,32 @@ import { connect } from 'react-redux'
 import style from './style.scss'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
 import { updateCode } from '../../actions'
+import AceEditor from 'react-ace'
+import 'brace/mode/javascript'
+import 'brace/theme/monokai'
 
 class Console extends React.Component {
-  updateCode = (e) => {
-    const code = e.target.value
+  updateCode = (code) => {
     this.props.updateCode(code)
   }
 
   render() {
     return (
       <div className={style.container}>
-        <textarea
-          onChange={this.updateCode}
+        <AceEditor
+          mode="javascript"
+          theme="monokai"
+          editorProps={{$blockScrolling: 'Infinity'}}
           className={style.editor}
-          value={this.props.code} />
+          focus={true}
+          style={{
+            height: false,
+            width: false,
+            fontSize: '1.5em'
+          }}
+          value={this.props.code}
+          onChange={this.updateCode}
+        />
       </div>
     )
   }
