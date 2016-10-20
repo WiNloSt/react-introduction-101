@@ -1,12 +1,14 @@
 import {
-  UPDATE_CODE
+  UPDATE_CODE,
+  APPEND_CONSOLE_OUTPUT
 } from '../actions'
 
 const initialState = {
   code:
 `// edit your code here
 console.log('hello world')
-`
+`,
+  consoleOutput: ['// initial value from store']
 }
 
 function reducer(state = initialState, action) {
@@ -17,6 +19,11 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         code: code
+      }
+    case APPEND_CONSOLE_OUTPUT:
+      return {
+        ...state,
+        consoleOutput: [...state.consoleOutput, ...action.consoleOutput]
       }
     default:
       return state
