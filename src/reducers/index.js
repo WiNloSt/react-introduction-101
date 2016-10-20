@@ -34,7 +34,11 @@ function reducer(state = initialState, action) {
 }
 
 function runCode(code) {
-  eval(code) // eslint-disable-line
+  try {
+    eval(code) // eslint-disable-line
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export default reducer
