@@ -1,6 +1,7 @@
 import {
   UPDATE_CODE,
-  APPEND_CONSOLE_OUTPUT
+  APPEND_CONSOLE_OUTPUT,
+  RUN_CODE
 } from '../actions'
 
 const initialState = {
@@ -14,17 +15,19 @@ console.log('hello world')
 function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_CODE:
-      const { code } = action
-      runCode(code)
       return {
         ...state,
-        code: code
+        code: action.code
       }
     case APPEND_CONSOLE_OUTPUT:
       return {
         ...state,
         consoleOutput: [...state.consoleOutput, ...action.consoleOutput]
       }
+    case RUN_CODE:
+      runCode(state.code)
+      return state
+
     default:
       return state
   }

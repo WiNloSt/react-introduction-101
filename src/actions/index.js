@@ -13,3 +13,10 @@ export function appendConsoleOutput(consoleOutput) {
     consoleOutput
   }
 }
+
+export const RUN_CODE = 'RUN_CODE'
+export function runCode() {
+  return {
+    type: RUN_CODE
+  }
+}
