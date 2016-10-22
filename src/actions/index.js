@@ -20,3 +20,10 @@ export function runCode() {
     type: RUN_CODE
   }
 }
+
+export const CLEAR_CONSOLE = 'CLEAR_CONSOLE'
+export function clearConsole() {
+  return {
+    type: CLEAR_CONSOLE
+  }
+}

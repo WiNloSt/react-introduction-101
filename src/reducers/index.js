@@ -1,7 +1,8 @@
 import {
   UPDATE_CODE,
   APPEND_CONSOLE_OUTPUT,
-  RUN_CODE
+  RUN_CODE,
+  CLEAR_CONSOLE
 } from '../actions'
 import worker from '../webWorker'
 
@@ -28,7 +29,11 @@ function reducer(state = initialState, action) {
     case RUN_CODE:
       runCode(state.code)
       return state
-
+    case CLEAR_CONSOLE:
+      return {
+        ...state,
+        consoleOutput: []
+      }
     default:
       return state
   }

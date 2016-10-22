@@ -1,15 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import style from './style.scss'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
+import { clearConsole } from '../../actions'
+import style from './style.scss'
 
-const Console = ({ consoleOutput }) => (
+const Console = ({ consoleOutput, clearConsole }) => (
   <div className={style.console}>
-    <ul>
+    <header className={style.header}>
+      <h1 className={style.headerName}>Console</h1>
+      <button className={style.clearLogButton} onClick={clearConsole}>Clear log</button>
+    </header>
+    <ul className={style.outputList}>
       {
         consoleOutput.map(
           (outputLine, index) => (
-            <li key={index}>{outputLine}</li>
+            <li key={index} className={style.outputItem}>{outputLine}</li>
           )
         )
       }
@@ -23,4 +28,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(AcceptStyleAndClassName(Console))
+function mapDispatchToProps(dispatch) {
+  return {
+    clearConsole: () => dispatch(clearConsole())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptStyleAndClassName(Console))
