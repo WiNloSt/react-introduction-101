@@ -11,7 +11,7 @@ const initialState = {
 `// edit your code here
 console.log('hello world')
 `,
-  consoleOutput: ['// initial value from store']
+  consoleOutput: []
 }
 
 function reducer(state = initialState, action) {
