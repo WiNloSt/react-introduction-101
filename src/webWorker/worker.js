@@ -1,3 +1,5 @@
+import stringify from '../lib/stringify'
+
 onmessage = message => { // eslint-disable-line
   const code = message.data
   try {
@@ -11,7 +13,14 @@ onmessage = message => { // eslint-disable-line
   const originalConsoleLog = console.log.bind(console)
 
   console.log = function(...rest) {
-    postMessage(rest)
+    const args = rest.map(arg => {
+      if (typeof arg === 'undefined') {
+        return 'undefined'
+      }
+
+      return stringify(arg)
+    })
+    postMessage(args)
     originalConsoleLog(...rest)
   }
 }())

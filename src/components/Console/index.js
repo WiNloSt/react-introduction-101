@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ReactSyntaxHighlighter from 'react-syntax-highlighter'
+import { darkula } from 'react-syntax-highlighter/dist/styles'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
 import { clearConsole } from '../../actions'
 import style from './style.scss'
@@ -14,7 +16,16 @@ const Console = ({ consoleOutput, clearConsole }) => (
       {
         consoleOutput.map(
           (outputLine, index) => (
-            <li key={index} className={style.outputItem}>{outputLine}</li>
+            <li key={index} className={style.outputItem}>
+              <ReactSyntaxHighlighter
+                style={darkula}
+                customStyle={{
+                  margin: '0.5em',
+                  background: 'none'
+                }}>
+                {outputLine}
+              </ReactSyntaxHighlighter>
+            </li>
           )
         )
       }
