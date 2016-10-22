@@ -12,6 +12,10 @@ class Console extends React.Component {
     this.props.updateCode(code)
   }
 
+  componentDidMount() {
+    this.updateCode(this.props.code)
+  }
+
   render() {
     return (
       <div className={style.container}>
