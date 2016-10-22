@@ -3,6 +3,7 @@ import {
   APPEND_CONSOLE_OUTPUT,
   RUN_CODE
 } from '../actions'
+import worker from '../webWorker'
 
 const initialState = {
   code:
@@ -34,11 +35,7 @@ function reducer(state = initialState, action) {
 }
 
 function runCode(code) {
-  try {
-    eval(code) // eslint-disable-line
-  } catch (error) {
-    console.error(error)
-  }
+  worker.postMessage(code)
 }
 
 export default reducer
