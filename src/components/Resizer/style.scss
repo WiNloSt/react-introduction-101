@@ -1,0 +1,17 @@
+$resizeBarWidth: 10px;
+
+.resizer {
+  position: absolute;
+  top: 0;
+  margin: 0 (-$resizeBarWidth/2);
+  width: $resizeBarWidth;
+  height: 100%;
+  background: #666;
+  z-index: 9;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+    background: #555;
+  }
+}
