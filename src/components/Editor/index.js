@@ -1,22 +1,24 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import style from './style.scss'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
-import { updateCode } from '../../actions'
+import * as actions from '../../actions'
 import AceEditor from 'react-ace'
 import 'brace/mode/javascript'
 import 'brace/theme/monokai'
 
 class Console extends React.Component {
-  updateCode = (code) => {
-    this.props.updateCode(code)
-  }
-
   componentDidMount() {
-    this.updateCode(this.props.code)
+    this.props.updateCode(this.props.code)
   }
 
   render() {
+    const aceCommands = [{
+      name: 'Run code',
+      bindKey: { win: 'Ctrl-enter', mac: 'Command-enter' },
+      exec: this.props.runCode,
+    }]
     return (
       <div className={style.container}>
         <AceEditor
@@ -31,7 +33,8 @@ class Console extends React.Component {
             fontSize: '1.5em'
           }}
           value={this.props.code}
-          onChange={this.updateCode}
+          onChange={this.props.updateCode}
+          commands={aceCommands}
         />
       </div>
     )
@@ -45,8 +48,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  const bindedActions = bindActionCreators(actions, dispatch)
   return {
-    updateCode: (code) => dispatch(updateCode(code))
+    ...bindedActions
   }
 }
 
