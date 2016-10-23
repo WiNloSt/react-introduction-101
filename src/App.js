@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Editor from './components/Editor'
 import Console from './components/Console'
 import Resizer from './components/Resizer'
+import CodeKelvin from './components/CodeKelvin'
 
 import style from './style.scss'
 
@@ -34,6 +35,7 @@ class App extends Component {
           width: `${100 - this.state.resizerPositionPercentage}%`,
           verticalAlign: 'top'
         }} />
+        <CodeKelvin />
       </div>
     )
   }

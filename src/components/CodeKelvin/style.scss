@@ -1,0 +1,36 @@
+.banner {
+  position: absolute;
+  padding: 0.4em 0.6em;
+  bottom: 0.5em;
+  right: 1em;
+  background: white;
+  border-radius: 1em;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.text {
+  display: inline-block;
+  margin-right: 1em;
+  padding-bottom: 0.2em;
+  color: #333;
+  vertical-align: bottom;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  vertical-align: bottom;
+  border-radius: 0.5em;
+
+  &:hover {
+    box-shadow: 0 0 0.5em #4bf;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
