@@ -28,7 +28,7 @@ const Console = ({ consoleOutput, isAutorun, clearConsole, runCode, toggleAutoru
         consoleOutput.map(
           (outputLine, index) => (
             <li key={index} className={style.outputItem}>
-              <pre style={{margin: '0.5em 0'}}>
+              <pre className={style.preOutput}>
                 {outputLine}
               </pre>
             </li>

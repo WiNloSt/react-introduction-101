@@ -1,16 +1,18 @@
 $lightBlue: #91d7ff;
 $blue: #0090e3;
 $margin: 0.4em;
+$consoleHeaderHeight: 3em;
 
 .console {
-  height: 100%;
-  overflow: auto;
   background: $lightBlue;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   background: $blue;
   display: flex;
+  flex: 0 0 $consoleHeaderHeight;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,7 +32,7 @@ $margin: 0.4em;
 .autorun {
   display: flex;
   align-items: center;
-  height: 2em;
+  height: 0.2em;
 }
 
 .autorunLabel {
@@ -65,11 +67,20 @@ $margin: 0.4em;
 
 .outputList {
   list-style: none;
+  margin: 0;
   padding: 0;
+  flex: 1 0 0px;
+  overflow: auto;
 }
 
 .outputItem {
   padding: 0 1em;
   border-bottom: 0.1em solid $blue;
   color: #333;
+}
+
+.preOutput {
+  font-size: 1.2em;
+  font-family: inherit;
+  margin: 0.5em 0;
 }

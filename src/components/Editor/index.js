@@ -30,7 +30,8 @@ class Console extends React.Component {
           style={{
             height: false,
             width: false,
-            fontSize: '1.5em'
+            fontFamily: 'Inconsolata',
+            fontSize: '1.2em'
           }}
           value={this.props.code}
           onChange={this.props.updateCode}
