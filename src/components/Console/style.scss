@@ -5,6 +5,10 @@ $consoleHeaderHeight: 3em;
 
 .container {
   background: $lightBlue;
+  height: 100%;
+}
+
+.containerFlex {
   display: flex;
   flex-direction: column;
   height: 100%;

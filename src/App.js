@@ -11,17 +11,13 @@ class App extends Component {
         <Editor style={{
           display: 'inline-block',
           width: '50%',
-          height: '100%',
           verticalAlign: 'top'
-        }}/>
-        <div style={{
+        }} />
+        <Console style={{
           display: 'inline-block',
           width: '50%',
-          height: '100%',
           verticalAlign: 'top'
-        }}>
-          <Console />
-        </div>
+        }} />
       </div>
     )
   }
