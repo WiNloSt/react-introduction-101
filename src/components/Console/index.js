@@ -1,7 +1,8 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import AcceptStyleAndClassName from '../../containers/AcceptStyleAndClassName'
-import { clearConsole, runCode, toggleAutorun } from '../../actions'
+import * as actions from '../../actions'
 import style from './style.scss'
 
 const Console = ({ consoleOutput, isAutorun, clearConsole, runCode, toggleAutorun }) => (
@@ -46,10 +47,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  const bindedActions = bindActionCreators(actions, dispatch)
   return {
-    clearConsole: () => dispatch(clearConsole()),
-    runCode: () => dispatch(runCode()),
-    toggleAutorun: () => dispatch(toggleAutorun())
+    ...bindedActions
   }
 }
 
