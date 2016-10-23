@@ -28,8 +28,8 @@ class Console extends React.Component {
           className={style.editor}
           focus={true}
           style={{
-            height: false,
-            width: false,
+            height: '100%',
+            width: '100%',
             fontFamily: 'Inconsolata',
             fontSize: '1.2em'
           }}

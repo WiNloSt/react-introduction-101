@@ -3,10 +3,11 @@ $blue: #0090e3;
 $margin: 0.4em;
 $consoleHeaderHeight: 3em;
 
-.console {
+.container {
   background: $lightBlue;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .header {

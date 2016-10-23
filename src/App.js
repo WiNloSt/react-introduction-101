@@ -8,8 +8,20 @@ class App extends Component {
   render() {
     return (
       <div className={style.container}>
-        <Editor style={{ flex: 2 }}/>
-        <Console style={{ flex: 1 }}/>
+        <Editor style={{
+          display: 'inline-block',
+          width: '50%',
+          height: '100%',
+          verticalAlign: 'top'
+        }}/>
+        <div style={{
+          display: 'inline-block',
+          width: '50%',
+          height: '100%',
+          verticalAlign: 'top'
+        }}>
+          <Console />
+        </div>
       </div>
     )
   }

@@ -6,7 +6,7 @@ import * as actions from '../../actions'
 import style from './style.scss'
 
 const Console = ({ consoleOutput, isAutorun, clearConsole, runCode, toggleAutorun }) => (
-  <div className={style.console}>
+  <div className={style.container}>
     <header className={style.header}>
       <h1 className={style.headerName}>Console</h1>
       <div className={style.consoleControl}>
