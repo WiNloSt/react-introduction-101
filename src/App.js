@@ -14,7 +14,7 @@ class App extends Component {
     const screenWidth = screen.availWidth
     const editorSize = percentage / 100 * screenWidth
     const consoleSize = (100 - percentage) / 100 * screenWidth
-    if (editorSize < 398 || consoleSize < 370) return
+    if (editorSize < 100 || consoleSize < 250) return
     this.setState({
       resizerPositionPercentage: percentage
     })
@@ -26,14 +26,12 @@ class App extends Component {
         <Editor style={{
           display: 'inline-block',
           width: `${this.state.resizerPositionPercentage}%`,
-          minWidth: '398px',
           verticalAlign: 'top'
         }} />
         <Resizer left={`${this.state.resizerPositionPercentage}%`} setResizerPosition={this.setResizerPosition} />
         <Console style={{
           display: 'inline-block',
           width: `${100 - this.state.resizerPositionPercentage}%`,
-          minWidth: '370px',
           verticalAlign: 'top'
         }} />
       </div>

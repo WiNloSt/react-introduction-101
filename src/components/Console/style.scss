@@ -1,7 +1,6 @@
 $lightBlue: #91d7ff;
 $blue: #0090e3;
 $margin: 0.4em;
-$consoleHeaderHeight: 3em;
 
 .container {
   background: $lightBlue;
@@ -17,7 +16,8 @@ $consoleHeaderHeight: 3em;
 .header {
   background: $blue;
   display: flex;
-  flex: 0 0 $consoleHeaderHeight;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -29,6 +29,7 @@ $consoleHeaderHeight: 3em;
 }
 
 .consoleControl {
+  margin-left: $margin;
   display: flex;
   align-items: center;
   font-family: sans-serif;
