@@ -7,7 +7,7 @@ import style from './style.scss'
 
 class App extends Component {
   state = {
-    resizerPositionPercentage: 50
+    resizerPositionPercentage: 60
   }
 
   setResizerPosition = (percentage) => {
