@@ -1,11 +1,15 @@
+$lightBlue: #91d7ff;
+$blue: #0090e3;
+$margin: 0.4em;
+
 .console {
   height: 100%;
   overflow: auto;
-  background: #91d7ff;
+  background: $lightBlue;
 }
 
 .header {
-  background: #0090e3;
+  background: $blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,16 +17,34 @@
 
 .headerName {
   margin: 0.2em 0;
-  margin-left: 0.4em;
+  margin-left: $margin;
   color: white;
 }
 
 .consoleControl {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+}
 
+.autorun {
+  display: flex;
+  align-items: center;
+  height: 2em;
+}
+
+.autorunLabel {
+  color: white;
+  margin-right: $margin;
+}
+
+.autorunCheckbox {
+  margin-right: $margin;
 }
 
 .button {
-  margin-right: 0.4em;
+  font-family: inherit;
+  margin-right: $margin;
   padding: 0.2em 0.6em;
   background: none;
   border: 0.15em solid white;
@@ -32,7 +54,7 @@
   outline: none;
 
   &:hover {
-    color: #0090e3;
+    color: $blue;
     background: white;
   }
 
@@ -48,6 +70,6 @@
 
 .outputItem {
   padding: 0 1em;
-  border-bottom: 0.1em solid #0090e3;
+  border-bottom: 0.1em solid $blue;
   color: #333;
 }

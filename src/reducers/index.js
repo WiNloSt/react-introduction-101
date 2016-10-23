@@ -2,7 +2,8 @@ import {
   UPDATE_CODE,
   APPEND_CONSOLE_OUTPUT,
   RUN_CODE,
-  CLEAR_CONSOLE
+  CLEAR_CONSOLE,
+  TOGGLE_AUTORUN
 } from '../actions'
 import worker from '../webWorker'
 
@@ -11,7 +12,8 @@ const initialState = {
 `// edit your code here
 console.log('hello world')
 `,
-  consoleOutput: []
+  consoleOutput: [],
+  isAutorun: true
 }
 
 function reducer(state = initialState, action) {
@@ -33,6 +35,11 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         consoleOutput: []
+      }
+    case TOGGLE_AUTORUN:
+      return {
+        ...state,
+        isAutorun: !state.isAutorun
       }
     default:
       return state

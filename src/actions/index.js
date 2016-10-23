@@ -27,3 +27,10 @@ export function clearConsole() {
     type: CLEAR_CONSOLE
   }
 }
+
+export const TOGGLE_AUTORUN = 'TOGGLE_AUTORUN'
+export function toggleAutorun() {
+  return {
+    type: TOGGLE_AUTORUN
+  }
+}
