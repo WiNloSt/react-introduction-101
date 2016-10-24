@@ -13,8 +13,8 @@ const SlideApp = () => (
       </Slide>
       <Slide>
         <div style={{
-          width: '1000px',
-          height: '500px',
+          width: '700px',
+          height: '400px',
           fontSize: 16
         }}>
           <EditorApp />
