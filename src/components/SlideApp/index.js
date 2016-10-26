@@ -7,8 +7,12 @@ import {
   Heading, Image, Layout, ListItem, List, Quote, Spectacle, Slide, Text // eslint-disable-line
 } from 'spectacle'
 import createTheme from 'spectacle/lib/themes/default'
-import Person from '../Person/'
 import './style.scss'
+
+// Code examples
+import Person from '../examples/Person'
+import IfComponent from '../examples/IfComponent'
+import Repetition from '../examples/Repetition'
 
 const theme = createTheme({
   primary: "#4bf"
@@ -77,9 +81,9 @@ const SlideApp = () => (
             <Fill>
               <CodePane
                 lang='jsx'
-                source={require('!!raw!../Person/index.js')}
+                source={require('!!raw!../examples/Person')}
                 style={{
-                  margin:"20px auto",
+                  margin:"2em auto",
                   fontSize: '1.2rem',
                   minWidth: false
                 }}/>
@@ -95,7 +99,63 @@ const SlideApp = () => (
             </Fill>
           </Appear>
         </Layout>
-
+      </Slide>
+      <Slide>
+        <Heading size={2}>
+          If else
+        </Heading>
+        <Layout>
+          <Appear>
+            <Fill>
+              <CodePane
+                lang='jsx'
+                source={require('!!raw!../examples/IfComponent')}
+                style={{
+                  margin:"2em auto",
+                  fontSize: '1.2rem',
+                  minWidth: false
+                }}/>
+            </Fill>
+          </Appear>
+          <Appear style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <Fill>
+              <IfComponent number={2} />
+            </Fill>
+          </Appear>
+        </Layout>
+      </Slide>
+      <Slide>
+        <Heading size={2}>
+          Repetition
+        </Heading>
+        <Layout>
+          <Appear>
+            <Fill>
+              <CodePane
+                lang='jsx'
+                source={require('!!raw!../examples/Repetition')}
+                style={{
+                  margin:"2em auto",
+                  fontSize: '1.2rem',
+                  minWidth: false
+                }}/>
+            </Fill>
+          </Appear>
+          <Appear style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'left'
+          }}>
+            <Fill>
+              <Repetition list={['One', 'Two', 'Three']} />
+            </Fill>
+          </Appear>
+        </Layout>
       </Slide>
     </Deck>
   </Spectacle>
