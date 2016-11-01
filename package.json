@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "js-editor": "winlost/js-editor",
     "normalize.css": "^5.0.0",
     "prismjs": "^1.5.1",
     "react": "^15.3.2",

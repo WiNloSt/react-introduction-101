@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Match } from 'react-router'
 import SlideApp from './components/SlideApp'
-import EditorApp from './containers/EditorApp'
+import JsEditor from 'js-editor'
 
 const App = () => (
   <BrowserRouter>
@@ -10,7 +10,7 @@ const App = () => (
       height: '100%'
     }}>
       <Match exactly pattern='/' component={SlideApp} />
-      <Match pattern='/editor' component={EditorApp} />
+      <Match pattern='/editor' component={JsEditor} />
     </div>
   </BrowserRouter>
 )
