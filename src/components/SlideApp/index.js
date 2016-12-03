@@ -157,6 +157,53 @@ const SlideApp = () => (
           </Appear>
         </Layout>
       </Slide>
+      <Slide>
+        <Heading size={2}>
+          Comparisons
+        </Heading>
+      </Slide>
+      <Slide>
+        <Heading size={2}>
+          Angular
+        </Heading>
+        <List>
+          <Appear><ListItem>Too much boilerplates</ListItem></Appear>
+          <Appear><ListItem>Controller could introduce messes</ListItem></Appear>
+        </List>
+      </Slide>
+      <Slide>
+        <Heading size={2}>
+          React
+        </Heading>
+        <List>
+          <Appear><ListItem>Components</ListItem></Appear>
+          <Appear><ListItem>Flux (Architecture)</ListItem></Appear>
+        </List>
+      </Slide>
+      <Slide>
+        <Heading size={1} fit>
+          What you need to know
+        </Heading>
+        <Heading size={1} fit margin='0.3em 0 0 0'>
+          To be able to develop in React
+        </Heading>
+        <List>
+          <Appear><ListItem>HTML</ListItem></Appear>
+          <Appear><ListItem>CSS</ListItem></Appear>
+          <Appear><ListItem>JavaScript</ListItem></Appear>
+          <Appear><ListItem>ES2015 (ES6)</ListItem></Appear>
+        </List>
+      </Slide>
+      <Slide>
+        <Heading size={2} fit>
+          ES2015 is now
+        </Heading>
+        <Appear>
+          <Heading size={2} fit>
+            with awesome features
+          </Heading>
+        </Appear>
+      </Slide>
     </Deck>
   </Spectacle>
 )
